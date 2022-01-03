@@ -1,13 +1,31 @@
 package com.company;
 
+import java.util.Arrays;
+
 public class MaxProduct {
     public static void main(String[] args) {
         int arr[]={-10, -3, 5, 6, -2};
         Maxpo(arr);
+        Maxpo2(arr);
 
     }
 
-     static void Maxpo(int[] arr) {
+    static void Maxpo2(int[] arr) {
+        int n= arr.length;
+        if (n<2){
+            return;
+        }
+
+        Arrays.sort(arr);
+        if (arr[0]*arr[1]>arr[n-1]*arr[n-2]){
+            System.out.println(arr[0]+" "+arr[1]);
+        }else {
+            System.out.println(arr[n-1]+" "+arr[n-2]);
+        }
+
+    }
+
+    static void Maxpo(int[] arr) {
         int maxprd=Integer.MIN_VALUE;
         int max_i=-1;
         int max_j=-1;
